@@ -1,0 +1,17 @@
+<h2>Création d'un utilisateur</h2>
+<form action="create_user.php" method="POST">
+    <label for="last_name">Nom</label><br />
+    <input type="text" id="last_name" name="last_name"><br /><br />
+    <label for="first_name">Prénom</label><br />
+    <input type="text" id="first_name" name="first_name"><br /><br />
+    <label for="email">Email</label><br />
+    <input type="email" id="email" name="email"><br /><br />
+    <label for="password">Mot de passe</label><br />
+    <input type="password" id="password" name="password"><br /><br />
+    <label for="user_role">Rôle</label><br />
+    <select id="user_role" name="user_role">
+        <option value="admin">Admin</option>
+        <option value="user">Utilisateur</option>
+    </select>
+    <button type="submit">Créer</button>
+</form>
