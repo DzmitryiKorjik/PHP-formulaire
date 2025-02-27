@@ -1,6 +1,13 @@
 <?php 
     require_once 'config.php';
 
+    try {
+        $pdo = Database::connect();
+        echo "Connexion réussie !";
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+
     // Read
     try {
         $stmt = $pdo->prepare("SELECT * FROM utilisateurs");

@@ -1,7 +1,15 @@
-<?php 
-require_once 'config.php';
+<?php
 
 session_start(); // Commençons la séance
+
+require_once 'config.php';
+
+try {
+    $pdo = Database::connect();
+
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 
 $id = $_POST['id'] ?? null;
 
@@ -25,7 +33,6 @@ try {
     $stmt = $pdo->prepare("DELETE FROM utilisateurs WHERE id = :id");
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
-    
     $_SESSION['message'] = "Utilisateur supprimé avec succès";
 } catch(PDOException $e) {
     $_SESSION['message'] = "Erreur de suppression : " . $e->getMessage();

@@ -1,6 +1,13 @@
 <?php
 require_once 'config.php';
 
+try {
+    $pdo = Database::connect();
+    echo "Connexion réussie !";
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
 // Vérifier si la requête est un POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo "Erreur : Requête invalide !";

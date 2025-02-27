@@ -1,12 +1,13 @@
 <?php
-   include 'read_table.php';
-    $name = "Dzmitryi";
-
     session_start();
+
     if (isset($_SESSION['message'])) {
         echo "<p style='color:red'>" . htmlspecialchars($_SESSION['message']) . "</p>";
         unset($_SESSION['message']); // Supprimer le message après affichage
     }
+    
+   include 'read_table.php';
+    $name = "Dzmitryi";
 ?>
 
 <!DOCTYPE html>
