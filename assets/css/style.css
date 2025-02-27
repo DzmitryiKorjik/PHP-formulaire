@@ -32,8 +32,10 @@ th, td {
 
 #block_user {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 10px;
+    gap: 10px;
     .block_user-creat, .block_user-delete {
         border: 1px solid #48ab01;
         border-radius: 5px;

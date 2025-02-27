@@ -8,10 +8,7 @@
 
         // Récupérer les résultats
         $resultats = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // var_dump($resultats);
-        // foreach ($resultats as $row) {
-        //     // Traiter chaque ligne de résultat
-        // }
+        $pdo = null;
     } catch(PDOException $e) {
         echo "Erreur de lecture : " . $e->getMessage();
     }
